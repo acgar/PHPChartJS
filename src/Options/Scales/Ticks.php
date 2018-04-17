@@ -107,6 +107,11 @@ class Ticks implements ArraySerializableInterface, \JsonSerializable
     private $max;
 
     /**
+    * @var int
+    */
+    private $min;
+
+    /**
      * @return float
      */
     public function getSuggestedMin()
@@ -455,6 +460,14 @@ class Ticks implements ArraySerializableInterface, \JsonSerializable
     }
 
     /**
+    * @return int
+    */
+    public function getMin()
+    {
+      return $this->min;
+    }
+
+    /**
      * @param int $max
      *
      * @return $this
@@ -464,6 +477,18 @@ class Ticks implements ArraySerializableInterface, \JsonSerializable
         $this->max = intval($max);
 
         return $this;
+    }
+
+    /**
+     * @param int $min
+     *
+     * @return $this
+     */
+    public function setMin($min)
+    {
+      $this->min = intval($min);
+
+      return $this;
     }
 
     /**
